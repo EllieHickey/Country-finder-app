@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DogFinder</title>
+    <title>Country Finder</title>
     <link href = "style.css" rel="stylesheet" type ="text/css">
 </head>
 <body>
@@ -52,7 +52,7 @@
 <!-- edit this one just so you dont get confused  -->
  <!-- figure this one out 
   YOU NEED TO FIGURE THIS ONE OUT OR YOUR RESULTS WONT WORK-->
-    <button onclick="getResults(document.getElementById('selectedGDP').value)">Find Matching Countries</button>
+    <button onclick="getResults(document.getElementById('GDP').value, document.getElementById('Region').value, document.getElementById('IncomeLevel').value)">Find Matching Countries</button>
 
     <h2>Matching Countries</h2>
     <div id = "outputBox" class="outputBox">

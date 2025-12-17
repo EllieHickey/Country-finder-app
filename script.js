@@ -2,7 +2,7 @@ var url = "https://raw.githubusercontent.com/b-mcavoy/datasets/refs/heads/main/G
 var region = getColumn(url, 4);
 var GDP = getColumn(url, 9);
 var incomeLevel = getColumn (url, 5);
-
+var countries = getColumn (url, 1);
 
 function getResults (selectedIncome, selectedRegion, selectedGDP ) {
 
@@ -13,11 +13,13 @@ console.log (selectedGDP);
 
 //finds income and if it matches up with the selected value it prints 
 var matchingIncome =[];
-for (var i = 0; i<= incomeLevel.length; i++){
-    if (incomeLevel[i] == selectedIncome){
-
-    matchingIncome.push(incomeLevel[i]);}
+for (var i = 0; i< incomeLevel.length; i++){
+    // console.log(region[i])
+    if (incomeLevel[i] == selectedIncome && region[i] == selectedRegion ){
+        matchingIncome.push(countries[i]);    
+    }
 }
+console.log (matchingIncome)
 //finds region and if it matches up with the selected value it prints 
 var matchingRegion =[];
 for (var i = 0; i<= region.length; i++){
