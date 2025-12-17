@@ -1,0 +1,20 @@
+
+header{
+  background-color: rgb(244, 224, 134);
+  padding: 20px;
+  margin-bottom: 10px;
+}
+button{
+  background-color: rgb(244, 224, 134);
+  padding: 10px;
+  font-family: monospace;
+  border: none;
+  margin-bottom: 10px;
+}
+.outputBox{
+  padding: 10px;
+  min-height: 160px;
+  width: 60%;
+  outline-color: rgb(244, 224, 134);
+  outline-style: solid;
+}
