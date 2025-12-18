@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DogFinder</title>
+    <link href = "style.css" rel="stylesheet" type ="text/css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+	
+	<header>
+		<h1>Country Finder</h1>
+	</header>
+<div class="row">
+  <div class="column">
+	<label>GDP: </label>
+        <!-- heres the id  -->
+    <select id="GDP">
+      <option value="High"> High</option>
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+    </select>
+    <br>
+    <br>
+    <label>Region: </label>
+        <!-- heres the id  -->
+         <!-- individual groups for region -->
+    <select id="Region">
+      <option value="South Asia">South Asia</option>
+      <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+      <option value="LatinAmerica and Caribbean">LatinAmerica and Caribbean</option>
+      <option value="Europe and Central Asia">Europe and Central Asia</option>
+      <option value="Middle East and North Africa">Middle East and North Africa</option>
+      <option value="East Asia and Pacific">East Asia and Pacific</option>
+      <option value="North America">North America</option>
+    </select>
+    
+    <br>
+    <br>
+        <label>Income Level: </label>
+  <select id="IncomeLevel">
+      <option value="Low Income">Low Income</option>
+      <option value="Upper Middle Income">Upper Middle Income</option>
+      <option value="High Income">High Income</option>
+      <option value="Lower Middle Income">Lower Middle Income</option>
+      <option value="Upper Middle Income">Upper Middle Income</option>
+      <option value="Low Income">Low Income</option>
+    </select>
+    <br>
+    <br>
+    
+  </div>
+<!-- edit this one just so you dont get confused  -->
+ <!-- figure this one out 
+  YOU NEED TO FIGURE THIS ONE OUT OR YOUR RESULTS WONT WORK-->
+    <button onclick="getResults(document.getElementById('IncomeLevel').value, document.getElementById('Region').value, document.getElementById('GDP').value)">Find Matching Countries</button>
+
+</center>
+    <h2>Matching Countries</h2>
+    <div id = "outputBox" class="outputBox">
+    
+	</div>
+
+  </center>
+    <script src="Utils.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+  <div class="column"></div>
+</div>
+
+	
+
