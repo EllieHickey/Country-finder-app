@@ -1,96 +1,60 @@
-
-// // this is the url it contains the information for all the country information
-// var url = "https://raw.githubusercontent.com/b-mcavoy/datasets/refs/heads/main/Geography/Countries%20and%20Territories.csv"
-// // these find index # of the column 
-// var region = getColumn(url, 4);
-// var GDP = getColumn(url, 9);
-// var incomeLevel = getColumn (url, 5);
-
-// // function takes 3 parameters
-// // find matching values from the list 
-// function getResults (selectedIncome, selectedRegion, selectedGDP ) {
-// // prints column 5
-// console.log (selectedIncome);
-// // prints column 4
-// console.log (selectedRegion);
-// // prints column 9
-// console.log (selectedGDP);
-
-
-// //finds income and if it matches up with the selected value it prints 
-
-// // stores income levels list 
-// var matchingIncome =[];
-// //loops through column 5 so incme level 
-// for (var i = 0; i<= incomeLevel.length; i++){
-// // checks for if income level matches income selected
-//     if (incomeLevel[i] == selectedIncome){
-// // if Income is true then it gets added to the Matching Income
-//     matchingIncome.push(incomeLevel[i]);}
-// }
-// //finds region and if it matches up with the selected value it prints 
-
-// // this list stores the Regions
-// var matchingRegion =[];
-// //Loops through list to to find the same Regions
-// for (var i = 0; i<= region.length; i++){
-// // ckes for if region matches region selected
-//     if (region[i] == selectedRegion){
-// // if region is matching it adds this to the matchingRegion
-//     matchingRegion.push(region[i]);}
-// }
-// }
-
-
-
-//to do: 
-//get the parameters situated 
-//divide the GDP into High Mid Low 
-//Low <1,200, 10,000 >Mid > 1,200, high >10,000
-//region is straight forward
-// if (GDP <= 1,200){
-// GDP == Low
-// do it as a while loop 
-
-
-
 var url = "https://raw.githubusercontent.com/b-mcavoy/datasets/refs/heads/main/Geography/Countries%20and%20Territories.csv"
 var region = getColumn(url, 4);
 var GDP = getColumn(url, 9);
 var incomeLevel = getColumn (url, 5);
 var countries = getColumn (url, 1);
 var flag = getColumn (url, 13);
+//fertility rate is at index 7
 
 function getResults (selectedIncome, selectedRegion, selectedGDP ) {
+    var GDPSections = "" //what do I put into the parenthesis?
+    if (selectedGDP == "Low"){
+        GDPSections = 0
+    }
 
+    else if (selectedGDP == "Medium"){
+        GDPSections = 1200
+    }
+    else if (selectedGDP == "High"){
+        GDPSections = 10000
+    }
 
     //finds income and if it matches up with the selected value it prints 
-    var matchingIncome =[];
+    var matchingCountries =[];
     var matchingImage =[];
     for (var i = 0; i< incomeLevel.length; i++){
 // console.log(region[i])
-        if (incomeLevel[i] == selectedIncome && region[i] == selectedRegion ){
-            matchingIncome.push(countries[i]); 
-            matchingImage.push(flag[i]); 
+        if (incomeLevel[i] == selectedIncome && region[i] == selectedRegion && GDPSections <= GDP[i]){
+            matchingCountries.push(countries[i]);
+            matchingImage.push(flag[i]);
 
      }
     }
-    console.log (matchingIncome)
-    console.log (matchingImage)
-//finds region and if it matches up with the selected value it prints 
-// var matchingRegion =[];
-// for (var i = 0; i<= region.length; i++){
-//     if (region[i] == selectedRegion){
+    console.log (matchingCountries);
+    console.log (matchingImage);
+ 
 
-//     matchingRegion.push(countries[i]);}
-// }
+document.getElementById("outputBox").innerHTML = "";
+//loop through the list of matching countries and add them to the output box
+for (var i = 0; i <  matchingCountries.length; i++){
+ 
+    //this time we have to create new image tags and stick them on the screen 1 by 1
+// create a new paragraph tag for each matching name
+    var countryName = document.createElement("p");
+    //set the INNER HTML of that new element to be the matching dog name
+    countryName.innerHTML = matchingCountries[i];
+    //create a new image element
+    var countryFlag = document.createElement("img")
+    //set the image source to be the matching image url from the list
+    countryFlag.src = matchingImage[i];
+    //readjust the image size relative to the output box
+    countryFlag.style.width = "50%"
+
+    //append both the name and the image to the output box
+    document.getElementById("outputBox").appendChild(countryName);
+    //append the image to the output box
+    document.getElementById("outputBox").appendChild(countryFlag);
 }
-
-//to do: 
-//divide the GDP into High Mid Low 
-//Low <1,200, 10,000 >Mid > 1,200, high >10,000
-
-
-
-
-
+}
+//when there are no results have something to say that. idk how to do that but i can figure it out
+//maybe instead of gdp use fertility rates, the highest number is 6.91
