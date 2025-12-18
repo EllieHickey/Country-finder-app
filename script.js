@@ -4,7 +4,7 @@ var GDP = getColumn(url, 9);
 var incomeLevel = getColumn (url, 5);
 var countries = getColumn (url, 1);
 var flag = getColumn (url, 13);
-//fertility rate is at index 7
+
 
 function getResults (selectedIncome, selectedRegion, selectedGDP ) {
     var GDPSections = "" //what do I put into the parenthesis?
@@ -13,10 +13,10 @@ function getResults (selectedIncome, selectedRegion, selectedGDP ) {
     }
 
     else if (selectedGDP == "Medium"){
-        GDPSections = 1200
+        GDPSections = 5000
     }
     else if (selectedGDP == "High"){
-        GDPSections = 10000
+        GDPSections = 17000
     }
 
     //finds income and if it matches up with the selected value it prints 
@@ -56,5 +56,3 @@ for (var i = 0; i <  matchingCountries.length; i++){
     document.getElementById("outputBox").appendChild(countryFlag);
 }
 }
-//when there are no results have something to say that. idk how to do that but i can figure it out
-//maybe instead of gdp use fertility rates, the highest number is 6.91
