@@ -6,27 +6,29 @@ var countries = getColumn (url, 1);
 
 function getResults (selectedIncome, selectedRegion, selectedGDP ) {
 
-console.log (selectedIncome);
-console.log (selectedRegion);
-console.log (selectedGDP);
+    // console.log (selectedIncome);
+    // console.log(incomeLevel[0])
+    // console.log (selectedRegion);
+    // console.log(region[0])
+    // console.log (selectedGDP);
 
 
-//finds income and if it matches up with the selected value it prints 
-var matchingIncome =[];
-for (var i = 0; i< incomeLevel.length; i++){
-    // console.log(region[i])
-    if (incomeLevel[i] == selectedIncome && region[i] == selectedRegion ){
-        matchingIncome.push(countries[i]);    
+    //finds income and if it matches up with the selected value it prints 
+    var matchingIncome =[];
+    for (var i = 0; i< incomeLevel.length; i++){
+        // console.log(region[i])
+        if (incomeLevel[i] == selectedIncome && region[i] == selectedRegion ){
+            matchingIncome.push(countries[i]);    
+        }
     }
-}
-console.log (matchingIncome)
-//finds region and if it matches up with the selected value it prints 
-var matchingRegion =[];
-for (var i = 0; i<= region.length; i++){
-    if (region[i] == selectedRegion){
+    console.log (matchingIncome)
+    //finds region and if it matches up with the selected value it prints 
+    // var matchingRegion =[];
+    // for (var i = 0; i<= region.length; i++){
+    //     if (region[i] == selectedRegion){
 
-    matchingRegion.push(region[i]);}
-}
+    //     matchingRegion.push(countries[i]);}
+    // }
 }
 
 //to do: 
