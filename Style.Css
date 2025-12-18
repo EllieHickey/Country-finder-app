@@ -1,0 +1,34 @@
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+header{
+  background-color: rgb(244, 224, 134);
+  padding: 20px;
+  margin-bottom: 10px;
+
+font-family: "Quicksand", sans-serif;
+}
+
+button{
+  background-color: rgb(244, 224, 134);
+  padding: 10px;
+  font-family: monospace;
+  border: none;
+  margin-bottom: 10px;
+}
+.outputBox{
+  padding: 10px;
+  min-height: 160px;
+  width: 90%;
+  outline-color: rgb(244, 224, 134);
+  outline-style: solid;
+font-family: "Quicksand", sans-serif;
+}
