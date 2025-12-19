@@ -7,14 +7,18 @@ var flag = getColumn (url, 13);
 
 
 function getResults (selectedIncome, selectedRegion, selectedGDP ) {
-    var GDPSections = "" //what do I put into the parenthesis?
+    //setting the conditions for the gdp when low is selected and translates it to a nuemerical value so the for loop works 
+    var GDPSections = "" 
     if (selectedGDP == "Low"){
         GDPSections = 0
     }
-
+    //setting the conditions for the gdp when medium is selected and translates it to a nuemerical value so the for loop works 
+//its not really working rn so play with the numbers 
     else if (selectedGDP == "Medium"){
         GDPSections = 5000
     }
+
+    //setting the conditions for the gdp when high is selected and translates it to a nuemerical value so the for loop works 
     else if (selectedGDP == "High"){
         GDPSections = 17000
     }
@@ -41,7 +45,7 @@ for (var i = 0; i <  matchingCountries.length; i++){
     //this time we have to create new image tags and stick them on the screen 1 by 1
 // create a new paragraph tag for each matching name
     var countryName = document.createElement("p");
-    //set the INNER HTML of that new element to be the matching dog name
+    //set the INNER HTML of that new element to be the matching country name
     countryName.innerHTML = matchingCountries[i];
     //create a new image element
     var countryFlag = document.createElement("img")
@@ -50,7 +54,7 @@ for (var i = 0; i <  matchingCountries.length; i++){
     //readjust the image size relative to the output box
     countryFlag.style.width = "50%"
 
-    //append both the name and the image to the output box
+    //append both the name to the output box
     document.getElementById("outputBox").appendChild(countryName);
     //append the image to the output box
     document.getElementById("outputBox").appendChild(countryFlag);
